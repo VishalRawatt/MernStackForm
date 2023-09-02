@@ -25,7 +25,7 @@ const setdata = (e)=>{
 const submitdata = async (e) => {
     e.preventDefault();
     if (sv.fullname === "" || sv.email === "" || sv.comment === "" || sv.phone === "") {
-        alert("enter Dara");
+        alert("Enter Data");
     }
     else {
         const { fullname, email, phone, comment, gender } = sv;
