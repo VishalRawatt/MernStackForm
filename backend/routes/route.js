@@ -19,8 +19,24 @@ route.post("/create",async(req,res)=>{
     await addUser.save();
     res.status(201).json(addUser);
     console.log(addUser);
+})
+
+//get single api data
+route.get("/view/:id",async(req,res)=>{
+    console.log(req.params);
+    const {id} = req.params;
+    const singleUser = await schima.findById({_id:id});
+    console.log(singleUser);
+    res.status(201).json(singleUser);
 });
 
+// delete api
+route.delete("/deletedata/:id",async(req,res)=>{
+    const {id} = req.params;
+    const a = await schima.findByIdAndDelete({_id:id})
+    console.log(a);
+    res.status(201).json(a);
+});
 
-module.exports = route
+module.exports = route ;
 
