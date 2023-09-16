@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 function UserView() {
     const [data, newData] = useState([]);
-    const { id } = useParams();
+    const {id} = useParams();
     console.log(id);
 
     const singleUser = () => {
